@@ -1,13 +1,14 @@
-<%= simple_form_for(@cocktail) do |f| %>
+<%= simple_form_for [@cocktail, @dose] do |f| %>
 
-  <% if @cocktail.errors.any? %>
+ <% if @dose.errors.any? %>
     You've got errors, dear.
   <% end %>
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present?%>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
   </div>
 
   <div class="form-actions">
