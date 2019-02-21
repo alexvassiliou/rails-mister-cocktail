@@ -1,5 +1,5 @@
 class DosesController < ApplicationController
-  before_action :set_cocktail
+  before_action :set_cocktail, except: :destroy
 
 
   def new
@@ -20,20 +20,14 @@ class DosesController < ApplicationController
     @dose = Dose.find(params[:id])
   end
 
-  def update
-    @dose = Dose.find(params[:id])
-    @dose.update(dose_params)
-    redirect_to cocktail_path(@cocktail)
-  end
-
 
   def destroy
     @dose = Dose.find(params[:id])
     if @dose.destroy
       flash[:notice] = "successfully deleted"
-      redirect_to cocktail_path(@cocktail)
+      redirect_to cocktail_path(@dose.cocktail)
     else
-      flash[:notice] = "there was an error deleting the dose"
+      flash[:error] = "there was an error deleting the dose"
       render :show
     end
   end
