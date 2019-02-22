@@ -1,20 +1,21 @@
 
-<div class="container">
-  <div class="row">
-    <% @cocktails.each do |cocktail| %>
-    <div class="col-xs-12 col-sm-4">
-
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/daily');">
-  <div class="card-category">Popular</div>
-
-  <div class="card-description">
-    <h2><%= link_to cocktail.name, cocktail_path(cocktail)%></h2>
+<% @cocktails.each do |cocktail| %>
+<div class="product">
+  <div class='product-upvote'>
+    <div class="product"></div>
   </div>
-  <img class="card-user" src="">
-  <a class="card-link" href="#" ></a>
-</div>
-
-    </div>
-    <%end%>
+  <%= image_tag("cocktail.png", :class => "product-image hidden-xs") %>
+  <div class='product-body'>
+    <h3><%= link_to cocktail.name, cocktail_path(cocktail)%></h3>
   </div>
+  <ul class="list-inline product-controls hidden-sm hidden-xs">
+    <li><%= link_to '<i class="fas fa-cocktail"></i>'.html_safe, new_cocktail_dose_path(cocktail) %></li>
+  </ul>
 </div>
+<%end%>
+
+
+
+
+
+
