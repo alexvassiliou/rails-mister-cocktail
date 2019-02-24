@@ -1,21 +1,26 @@
-
-<% @cocktails.each do |cocktail| %>
-<div class="product">
-  <div class='product-upvote'>
-    <div class="product"></div>
+<div class="wrapper">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(130,0,80,0.3) 0%, rgba(50,0,25,0.3) 50%), url('http://i63.tinypic.com/xljqkl.jpg');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Learn to code with us in Berlin</p>
+    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
   </div>
-  <%= image_tag("cocktail.png", :class => "product-image hidden-xs") %>
-  <div class='product-body'>
-    <h3><%= link_to cocktail.name, cocktail_path(cocktail)%></h3>
-  </div>
-  <ul class="list-inline product-controls hidden-sm hidden-xs">
-    <li><%= link_to '<i class="fas fa-cocktail"></i>'.html_safe, new_cocktail_dose_path(cocktail) %></li>
-  </ul>
 </div>
-<%end%>
 
+<h2>Cocktail List</h2>
 
-
-
-
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <% @cocktails.each do |cocktail| %>
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+        <div class="card-description">
+          <%= link_to cocktail.name, cocktail_path(cocktail)%>
+        </div>
+      </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+</div>
 

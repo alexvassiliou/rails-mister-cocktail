@@ -1,7 +1,16 @@
+<div class="wrapper">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(130,0,80,0.3) 0%, rgba(50,0,25,0.3) 50%), url('http://i63.tinypic.com/xljqkl.jpg');">
+  <div class="banner-content">
+    <h1><%= @cocktail.name%></h1>
+    <p>Learn to code with us in Berlin</p>
+    <!-- <a class="btn btn-primary btn-lg">Start now</a> -->
+  </div>
+</div>
+
+
+<h2>Ingredients</h2>
+
 <div class="container">
-
-<h1><%= @cocktail.name %></h1>
-
 <ul>
   <% @doses.each do |dose| %>
     <li><%= link_to dose.description%> <%= dose.ingredient.name %></li>
@@ -10,9 +19,7 @@
 </ul>
 <p><%= link_to 'Add ingredient', new_cocktail_dose_path(@cocktail) %></p>
 <%= link_to 'Delete', cocktail_path(@cocktail), method: :delete, data: { confirm: 'Are you sure?' } %>
-
-
-
 </div>
 
 
+</div>
