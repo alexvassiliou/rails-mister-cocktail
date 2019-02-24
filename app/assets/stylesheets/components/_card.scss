@@ -6,21 +6,27 @@
   color: white;
   position: relative;
   border-radius: 1px;
+  // margin-left: ;
+  // margin-right: ;
+  // margin-top: 0 ;
+  margin-bottom: 25px;
 }
 
 .card-description {
   position: absolute;
-  bottom: 71px;
-  left: 100px;
 }
 
 .card-description a {
   font-size: 24px;
   color: white;
   text-decoration: none;
-  text-align: center;
 }
 
 .card-link:hover {
   opacity: 0.1;
 }
+
+.text-center a {
+    text-align: center;
+}
+
